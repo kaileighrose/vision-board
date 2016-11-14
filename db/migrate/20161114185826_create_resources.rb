@@ -1,6 +1,6 @@
-class CreateResource < ActiveRecord::Migration
+class CreateResources < ActiveRecord::Migration
   def change
-    create_table :resouces do |t|
+    create_table :resources do |t|
       t.text :type
       t.text :name
       t.text :item
