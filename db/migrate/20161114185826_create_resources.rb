@@ -5,6 +5,7 @@ class CreateResources < ActiveRecord::Migration
       t.string :name
       t.text :item
       t.text :notes
+      t.integer :user_id
       t.timestamps null: false
     end
   end
