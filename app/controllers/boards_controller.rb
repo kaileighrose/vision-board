@@ -9,7 +9,6 @@ class BoardsController < ApplicationController
   def create
     @board = Board.create(board_params)
     if @note.save
-      current_Board = @board
       render json: @board 
     end
   end
