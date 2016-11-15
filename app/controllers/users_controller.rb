@@ -32,6 +32,11 @@ class UsersController < ApplicationController
     render json: @user 
   end
 
+  def destroy
+    @user = User.find(current_user.id)
+    @user.destroy
+  end
+
 private
   def user_params
     params.require(:user).permit(:id, :username, :password, :boards => [], :resources => [])
