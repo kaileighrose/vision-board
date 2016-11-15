@@ -4,6 +4,6 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resource).permit(:id, ::user_id, :boards => [])
+    params.require(:resource).permit(:id, :user_id, :boards => [])
   end
 end
