@@ -1,3 +1,3 @@
 class UserBoardSerializer < ActiveModel::Serializer
-  attributes :user_id, :username, :board_id
+  attributes :id, :user_id, :username, :board_id
 end
