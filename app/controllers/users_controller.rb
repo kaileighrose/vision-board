@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :authorize
 
   def new
     @user = User.new
-    render json: @user 
   end
 
   def create
