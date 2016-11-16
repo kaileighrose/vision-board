@@ -16,4 +16,6 @@
 //= require angular
 //= require angular_sanitize
 //= require angular_ui_router
+//= require controllers
+//= require services
 //= require_tree .
