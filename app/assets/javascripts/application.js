@@ -18,4 +18,5 @@
 //= require angular_ui_router
 //= require controllers
 //= require services
+//= require directives
 //= require_tree .
