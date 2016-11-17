@@ -4,7 +4,7 @@ angular
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: '/views/resources/index.html',
+                templateUrl: '/views/users/show.html',
                 controller: 'UserController as user',
                 resolve: {
                   user: function ($routeParams, UserService) {

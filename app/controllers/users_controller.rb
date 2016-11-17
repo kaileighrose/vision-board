@@ -25,6 +25,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @user = User.find(current_user.id) if current_user != nil
+    render json: @user 
+  end
+
   def show
     @user = User.find(current_user.id) if current_user != nil
     render json: @user 
