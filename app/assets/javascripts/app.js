@@ -7,8 +7,8 @@ angular
                 templateUrl: '/views/users/show.html',
                 controller: 'UserController as user',
                 resolve: {
-                  user: function ($routeParams, UserService) {
-                    return UserService.getUser($routeParams.id);
+                  user: function (UserService) {
+                    return UserService.checkUser();
                   }
                 }
             })
@@ -22,5 +22,5 @@ angular
                     }
                 }
             });
-    $urlRouterProvider.otherwise('/top');
+    $urlRouterProvider.otherwise('/');
     }])

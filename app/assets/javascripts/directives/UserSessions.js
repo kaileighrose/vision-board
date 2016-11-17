@@ -1,23 +1,19 @@
 function UserSessions() {
   return {
         template: [
-            '<div class="twitter">',
-                '<a href="https://twitter.com/{{ handle }}">Follow @{{ handle }} on Twitter!</a>',
-                '<button ng-click="ctrl.changeHandle()">Change Handle</button>',
+            '<div class="userForm">',
+                '{{userform}}',
             '</div>'
         ].join(''),
         scope: {
-            handle: '@'
+          userform: '='
         },
         controller: function ($scope) {
-            // $scope.handle === 'billgates'
- 
-            this.changeHandle = function () {
+            this.switchForm = function () {
                 $scope.handle = 'angularjs';
             };
         },
-        controllerAs: 'ctrl',
-        restrict: 'E'
+        controllerAs: 'ctrl'
     };
 }
 

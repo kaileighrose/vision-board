@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :resources
   resources :sessions
 
-  #root '/'
+  root :to => "layouts#index"
+  get "*path" => "layouts#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
