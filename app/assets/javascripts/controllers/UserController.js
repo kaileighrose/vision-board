@@ -1,6 +1,6 @@
-function UserController(UserService) {
+function UserController(UserService, user) {
   var ctrl = this;
- 
+  this.current_user;
   ctrl.user = user.data;
 }
 

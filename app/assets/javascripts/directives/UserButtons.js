@@ -1,19 +1,17 @@
-function UserSessions() {
+function UserButtons(UserService) {
   return {
         template: [
             '<div class="userForm">',
-                '{{userform}}',
+                '{{buttons}}',
             '</div>'
         ].join(''),
         scope: {
           userform: '='
         },
-        controller: function ($scope) {
-            this.switchForm = function () {
-                $scope.handle = 'angularjs';
-            };
-        },
-        controllerAs: 'ctrl'
+        link: function (scope, element, attrs) {
+                scope.button = UserService.buttons;
+        }
+        controller: 'UserController as "ctrl"'
     };
 }
 

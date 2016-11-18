@@ -1,25 +1,27 @@
 function UserService($http) {
-
+    //remember to add logout
     var current_user;
-
-    this.handleUser = function () {
-      if (this.checkUser() == 'no user') {
-
-      } else {
-        return current_user;
-      }
-
-    }
+    this.form = '';
+    this.buttons = '';
 
     this.checkUser = function () {
       current_user = $http.get('/users');
       if (current_user.length = 0 || current_user = null) {
-        return 'no user'
+        this.buttons = '<button ng-click="logForm">Log in</button>  <button ng-click="signForm">Sign Up</button>'
+        return null;
       }
       else {
-        
+        return current_user;
       }
     };
+
+    this.logForm = function () {
+      // body...
+    }
+
+    this.signForm = function () {
+      // body...
+    }
 
     this.SignUp = function (data) {
       return $http.post('/users', JSON.stringify(data));
