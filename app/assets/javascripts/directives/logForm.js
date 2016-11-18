@@ -1,13 +1,10 @@
-function UserForms(UserService) {
+function logForm() {
   return {
         template: [
             '<div class="userForm">',
                 '{{forms}}',
             '</div>'
         ].join(''),
-        scope: {
-         forms: '='
-        },
         link: function (scope, element, attrs) {
                 scope.button = UserService.forms;
         },
@@ -17,4 +14,4 @@ function UserForms(UserService) {
 
 angular
     .module('app')
-    .directive('UserForms', UserForms);
+    .directive('logForm', logForm);
