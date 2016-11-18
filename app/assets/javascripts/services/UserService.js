@@ -5,12 +5,13 @@ function UserService($http) {
     this.buttons = '';
 
     this.checkUser = function () {
-      current_user = $http.get('/users');
-      if (current_user = null) {
+      resp = $http.get('/users.json');
+      if (current_user == 404 || current_user == null) {
         this.buttons = '<button ng-click="logForm()">Log in</button>  <button ng-click="signForm()">Sign Up</button>'
-        return null;
+        return {};
       }
       else {
+        current_user = resp.data
         return current_user;
       }
     };

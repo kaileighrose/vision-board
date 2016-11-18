@@ -4,13 +4,8 @@ angular
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: '/views/users/show.html',
-                controller: 'UserController as user',
-                resolve: {
-                  user: function (UserService) {
-                    return UserService.checkUser();
-                  }
-                }
+                templateUrl: 'users/index.html',
+                controller: 'UserController as user'
             });
     $urlRouterProvider.otherwise('/');
     });
