@@ -1,12 +1,14 @@
-<div>
+<div ng-controller="ResourceController as rs">
+
+<div class="paginate">
     <ul class="pagination">
-      <li ng-if="top.page > 0">
-        <a href="" ng-click="top.previousPage()">
+      <li ng-if="rs.page > 0">
+        <a href="" ng-click="rs.previousPage()">
           << Previous
         </a>
       </li>
-      <li ng-if="top.page < top.totalPages - 1">
-        <a href="" ng-click="top.nextPage()">
+      <li ng-if="rs.page < top.totalPages - 1">
+        <a href="" ng-click="rs.nextPage()">
           Next >>
         </a>
       </li>
@@ -14,4 +16,5 @@
 
     <div style="clear: both;"></div>
   </div>
+</div>
 </div>
