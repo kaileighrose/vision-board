@@ -1,7 +1,7 @@
 function UserButtons(UserService) {
   return {
         template: [
-            '<div class="userButtons">',
+            '<div class="userbuttons">',
                 '{{buttons}}',
             '</div>'
         ].join(''),
@@ -17,4 +17,4 @@ function UserButtons(UserService) {
 
 angular
     .module('app')
-    .directive('UserButtons', UserButtons);
+    .directive('userButtons', UserButtons);

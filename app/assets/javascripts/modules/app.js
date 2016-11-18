@@ -1,5 +1,5 @@
 angular
-    .module('app', ['ui.router', 'ngSanitize'])
+    .module('app', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('home', {

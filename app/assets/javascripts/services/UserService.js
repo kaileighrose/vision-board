@@ -15,14 +15,6 @@ function UserService($http) {
       }
     };
 
-    this.logForm = function () {
-      // body...
-    }
-
-    this.signForm = function () {
-      // body...
-    }
-
     this.SignUp = function (data) {
       return $http.post('/users', JSON.stringify(data));
     }

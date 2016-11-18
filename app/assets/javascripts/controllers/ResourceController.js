@@ -10,9 +10,9 @@ function ResourceController(resources) {
   ctrl.paginateResources = function () {
     ctrl.data = resources.data.slice(ctrl.page * RESOURCES_PER_PAGE, (ctrl.page + 1) * RESOURCES_PER_PAGE);
     var info;
-    for (var i = 0; i < ctrl.posts.length; i++) {
-      info = TopService.getPost(ctrl.posts[i])
-      ctrl.detail.push(info.$$state);
+    for (var i = 0; i < ctrl.data.length; i++) {
+      //info = TopService.getPost(ctrl.posts[i])
+      //ctrl.detail.push(info.$$state);
     }
   };
 

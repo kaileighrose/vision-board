@@ -14,10 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require angular
-//= require angular-sanitize
 //= require angular-ui-router
+//= require modules
 //= require controllers
 //= require services
 //= require directives
-//= require app
-//= require_tree .
+
