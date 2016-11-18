@@ -19,4 +19,5 @@
 //= require controllers
 //= require services
 //= require directives
+//= require app
 //= require_tree .

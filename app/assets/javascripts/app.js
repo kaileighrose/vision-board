@@ -11,16 +11,6 @@ angular
                     return UserService.checkUser();
                   }
                 }
-            })
-            .state('post', {
-                url: '/post/:id',
-                templateUrl: '/views/post.html',
-                controller: 'PostController as post',
-                resolve: {
-                    post: function ($stateParams, TopService) {
-                        return TopService.getPost($stateParams.id);
-                    }
-                }
             });
     $urlRouterProvider.otherwise('/');
-    }])
+    });

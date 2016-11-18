@@ -6,8 +6,8 @@ function UserService($http) {
 
     this.checkUser = function () {
       current_user = $http.get('/users');
-      if (current_user.length = 0 || current_user = null) {
-        this.buttons = '<button ng-click="logForm">Log in</button>  <button ng-click="signForm">Sign Up</button>'
+      if (current_user = null) {
+        this.buttons = '<button ng-click="logForm()">Log in</button>  <button ng-click="signForm()">Sign Up</button>'
         return null;
       }
       else {

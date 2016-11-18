@@ -1,20 +1,20 @@
 function UserButtons(UserService) {
   return {
         template: [
-            '<div class="userForm">',
+            '<div class="userButtons">',
                 '{{buttons}}',
             '</div>'
         ].join(''),
         scope: {
-          userform: '='
+         buttons: '='
         },
         link: function (scope, element, attrs) {
                 scope.button = UserService.buttons;
-        }
+        },
         controller: 'UserController as "ctrl"'
     };
 }
 
 angular
     .module('app')
-    .directive('UserSessions', UserSessions);
+    .directive('UserButtons', UserButtons);
