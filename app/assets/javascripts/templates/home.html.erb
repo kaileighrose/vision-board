@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>The Home View!</h1>
+    <ul>
+        <li ng-repeat="thing in things">{{thing}}</li>
+    </ul>
+    <div ng-controller="UserController as user">
+      <user-buttons></user-buttons>
+      <user-forms></user-forms>
+    </div>
+</div>

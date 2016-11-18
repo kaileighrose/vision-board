@@ -8,8 +8,9 @@ angular
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'users/index.html',
-                controller: 'UserController as user'
+                templateUrl: 'home.html',
+                controller: 'HomeCtrl'
             });
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
     });

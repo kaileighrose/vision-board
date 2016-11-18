@@ -20,6 +20,5 @@
 //= require controllers
 //= require services
 //= require directives
-//= require templates
 //= require_tree .
-//= require_tree ../templates
+//= require_tree ./templates

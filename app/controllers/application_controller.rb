@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     render :'users/_signin' unless current_user
   end
 
+  def index
+    
+  end
+
 end
