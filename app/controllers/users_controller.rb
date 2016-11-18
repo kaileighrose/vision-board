@@ -27,12 +27,18 @@ class UsersController < ApplicationController
 
   def index
     @user = User.find(current_user.id) if current_user != nil
-    render json: @user 
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render json: @user }
+    end 
   end
 
   def show
     @user = User.find(current_user.id) if current_user != nil
-    render json: @user 
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render json: @user }
+    end 
   end
 
   def destroy
