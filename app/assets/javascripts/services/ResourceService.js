@@ -1,5 +1,15 @@
 function ResourceService($http) {
-  // body...
+  this.getResources = function () {
+    return $http.get('/resources.json');
+  }
+
+  this.addResource = function (data) {
+    return $http.post('/resources.json', data);
+  }
+
+  this.getOneResource = function () {
+    // body...
+  }
 }
 
 angular

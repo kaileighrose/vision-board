@@ -1,0 +1,9 @@
+<form ng-submit="addBoard()">
+  <select ng-repeat="type in board.types">
+    <option>{{type}}</option>
+  </select>
+  <br>
+  <input type="text" placeholder="Item" ng-model="link"></input>
+  <br>
+  <button type="submit">Add Resource</button>
+</form>
