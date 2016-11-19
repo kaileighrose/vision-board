@@ -1,8 +1,12 @@
 <div class="container">
 <div ng-controller="ResourceController as rs">
 <h3>All Resources:</h3>
+<div class="addpost">
+  <button ng-click="rs.showForm()">Add Post</button>
+  <div ui-view></div>
+</div>
 <div ng-repeat="resource in rs.resources">
-  
+  {{resource}}
 </div>
 
 <div class="paginate">
