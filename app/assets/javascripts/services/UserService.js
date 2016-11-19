@@ -1,17 +1,15 @@
 function UserService($http) {
     //remember to add logout
     var current_user;
-    this.form = '';
-    this.buttons = '';
 
     this.checkUser = function () {
       resp = $http.get('/users.json');
-      if (current_user == 404 || current_user == null) {
-        this.buttons = '<button ng-click="logForm()">Log in</button>  <button ng-click="signForm()">Sign Up</button>'
-        return {};
+      console.log(resp.$$state);
+      if (resp.$$state.data == 404 || resp.$$state.data == null) {
+        return 'none';
       }
       else {
-        current_user = resp.data
+        current_user = resp.$$state.data
         return current_user;
       }
     };

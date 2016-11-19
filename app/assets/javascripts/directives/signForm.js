@@ -13,7 +13,7 @@ function signForm() {
         ].join(''),
         controller: function (scope) {
         },
-        controller: 'UserController as "ctrl"'
+        controller: 'UserController as ctrl'
     };
 }
 

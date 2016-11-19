@@ -4,7 +4,9 @@
         <li ng-repeat="thing in things">{{thing}}</li>
     </ul>
     <div ng-controller="UserController as user">
-      <user-buttons></user-buttons>
-      <user-forms></user-forms>
+      <div ng-if="user.current_user == 'none'"><user-buttons></user-buttons>
+      <div>
+      <div ng-if="user.form == 'login'"> <log-form></log-form></div>
+      <div ng-if="user.form == 'signin'"><sign-form></sign-form></div>
     </div>
 </div>
