@@ -1,5 +1,5 @@
 var RESOURCES_PER_PAGE = 20;
-function ResourceController(resources) {
+function ResourceController(ResourceService) {
   var ctrl = this;
   ctrl.data = [];
   ctrl.types = ['link', 'idea', 'image link']

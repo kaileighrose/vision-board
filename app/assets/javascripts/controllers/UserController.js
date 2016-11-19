@@ -11,7 +11,6 @@ function UserController(UserService, $scope) {
   }
 
   ctrl.signUser = function (data) {
-    console.log($scope);
     ctrl.current_user = UserService.SignUp({username: ctrl.username, password: ctrl.password});
   }
   ctrl.check = function () {
