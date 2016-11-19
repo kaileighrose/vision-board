@@ -2,7 +2,7 @@ var RESOURCES_PER_PAGE = 20;
 function ResourceController(resources) {
   var ctrl = this;
   ctrl.data = [];
-  
+  ctrl.types = ['link', 'idea', 'image link']
   ctrl.page = 0;
   ctrl.totalResources = resources.data.length;
   ctrl.totalPages = Math.ceil(ctrl.totalResources / RESOURCES_PER_PAGE);

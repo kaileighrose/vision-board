@@ -1,0 +1,9 @@
+<form ng-submit="addResource()">
+  <select ng-repeat="type in rs.types">
+    <option>{{type}}</option>
+  </select>
+  <br>
+  <input type="text" placeholder="Item" ng-model="link"></input>
+  <br>
+  <button type="submit">Add Resource</button>
+</form>
