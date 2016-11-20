@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def new
     @user = User.new
   end
 
   def create
-    @user = User.create(user_params)
-    if @note.save
+    @user = User.create(username: params["username"], password: params["password"])
+    if @user.save
       current_user = @user
       render json: @user 
     end
