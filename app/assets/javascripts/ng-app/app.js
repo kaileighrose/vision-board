@@ -8,9 +8,26 @@ angular
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'home.html',
-                controller: 'UserController'
-            });
+                views: {
+                    '': {templateUrl: 'home.html'},
+                    'board@home': {
+                      templateUrl: 'board.html',
+                      controller: 'BoardController as board' 
+                    },
+                    'resources@home': {
+                      templateUrl: 'resources.html',
+                      controller: 'ResourceController as rs'
+                    },
+                    'user@home': {
+                      templateUrl: 'user.html',
+                      controller:  'UserController as user'
+                    },
+                    'sessions@home': {
+                      templateUrl: 'sessions.html',
+                      controller:  'UserController as user'
+                    }
+                }
+            })
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
     });

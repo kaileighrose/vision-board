@@ -1,30 +1,13 @@
 <div id="template" class="container">
-<div ng-controller="ResourceController as rs">
-<h3>All Resources:</h3>
-<div class="addpost">
-  <button ng-click="rs.showForm()">Add Post</button>
-  <div ui-view></div>
-</div>
-<div ng-repeat="resource in rs.resources">
-  <resource-display></resource-display>
-</div>
-
-<div class="paginate">
-    <ul class="pagination">
-      <li ng-if="rs.page > 0">
-        <a href="" ng-click="rs.previousPage()">
-          << Previous
-        </a>
-      </li>
-      <li ng-if="rs.page < top.totalPages - 1">
-        <a href="" ng-click="rs.nextPage()">
-          Next >>
-        </a>
-      </li>
-    </ul>
-
-    <div style="clear: both;"></div>
+  <div ng-controller="ResourceController as rs">
+    <h3>All Resources:</h3>
+    <div class="addresource">
+      <button ng-click="rs.showForm()">Add Resource</button>
+      <div ui-view></div>
+    </div>
+    <div ng-repeat="resource in rs.resources">
+      <resource-display></resource-display>
+    </div>
+    </div>
   </div>
-</div>
-</div>
 </div>
