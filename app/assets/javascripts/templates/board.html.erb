@@ -2,8 +2,13 @@
   <div ng-controller="BoardController as board">
     <div ng-repeat="resource in board.resources">
       <div class="slot">
-        {{resource}}
+        <resource-display></resource-display>
       </div>
+    </div>
+    <div ng-repeat="board in board.boards">
+      <ul>
+        <li><a href="#/board/{{board.id}}">{{board.board}}</a></li>
+      </ul>
     </div>
   </div>
 </div>
