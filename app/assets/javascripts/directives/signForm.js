@@ -2,10 +2,10 @@ function signForm() {
   return {
         template: [
             '<div class="userForm">',
-                '<form ng-submit="user.signUser(data); userData={}">',
-                  '<input type="text" placeholder="Username" ng-model="userData.username"></input>',
+                '<form name="form" ng-submit="user.signUser()">',
+                  '<input type="text" name="username" required="required" placeholder="Username" ng-model="user.username"></input>',
                   '<br>',
-                  '<input type="text" placeholder="Password" ng-model="userData.password"></input>',
+                  '<input type="text" name="password" required="required" placeholder="Password"  ng-model="user.password"></input>',
                   '<br>',
                   '<button type="submit">Sign up</button>',
                 '</form>',

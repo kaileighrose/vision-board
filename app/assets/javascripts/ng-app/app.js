@@ -9,7 +9,7 @@ angular
             .state('home', {
                 url: '/',
                 templateUrl: 'home.html',
-                controller: 'HomeCtrl'
+                controller: 'UserController'
             });
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);

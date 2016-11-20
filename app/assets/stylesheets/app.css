@@ -1,0 +1,28 @@
+#template {
+  margin-top: 20px;
+  padding: 10px 0px 5px 0px;
+}
+
+li {
+  display: inline;
+  padding: 5px;
+}
+
+.slot {
+  background-color: #6de0e0;
+  width: 25%;
+}
+
+h3, p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  color: #0088dd;
+  border-bottom: 1px solid #0088dd;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  color: #90aaaf;
+}
