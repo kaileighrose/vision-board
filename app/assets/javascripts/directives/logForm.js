@@ -2,10 +2,10 @@ function logForm() {
   return {
         template: [
             '<div class="userForm">',
-                '<form ng-submit="user.logUser()">',
-                  '<input type="text" placeholder="Username" ng-model="username"></input>',
+                '<form ng-submit="user.logUser(userData); userData={}">',
+                  '<input type="text" placeholder="Username" ng-model="userData.username"></input>',
                   '<br>',
-                  '<input type="text" placeholder="Password" ng-model="password"></input>',
+                  '<input type="text" placeholder="Password" ng-model="userData.password"></input>',
                   '<br>',
                   '<button type="submit">Log in</button>',
                 '</form>',
