@@ -2,6 +2,7 @@ function ResourceController(ResourceService) {
   var ctrl = this;
   ctrl.types = ['link', 'idea', 'image link'];
   ctrl.form = false;
+  ctrl.search = 'B';
   //need to add name column to table
 
   ctrl.showForm = function () {
