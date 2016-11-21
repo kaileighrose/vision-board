@@ -2,8 +2,10 @@
 <p>New Resource:</p>
 <form ng-submit="addResource(resource)">
   <select>
-    <option ng-repeat="type in rs.types" value="{{type}}">{{type}}</option>
+    <option ng-repeat="type in rs.types" name="resource.type" value="{{type}}">{{type}}</option>
   </select>
+  <br>
+  <input type="text" name="resource.title" placeholder="title" ng-model="resource.title"></input>
   <br>
   <input type="text" placeholder="Item" ng-model="resource.item"></input>
   <br>
