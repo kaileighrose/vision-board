@@ -1,7 +1,8 @@
 function BoardController(BoardService) {
   var ctrl = this;
   ctrl.data = [];
-  ctrl.types = ['link', 'idea', 'image link']
+  ctrl.boards = {};
+  // boardname => [resources]
 }
 
 angular

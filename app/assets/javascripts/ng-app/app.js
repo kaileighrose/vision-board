@@ -16,13 +16,7 @@ angular
                     },
                     'resources@home': {
                       templateUrl: 'resources.html',
-                      controller: 'ResourceController as rs',
-                      children: [
-                        {
-                          name: 'resources.addresource',
-                          templateUrl: 'addresource.html'
-                        }
-                      ]
+                      controller: 'ResourceController as rs'
                     },
                     'user@home': {
                       templateUrl: 'user.html',
@@ -33,7 +27,7 @@ angular
                       controller:  'UserController as user'
                     }
                 }
-            })
+            });
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
     });

@@ -7,8 +7,8 @@ function ResourceService($http) {
     return $http.post('/resources.json', data);
   }
 
-  this.getOneResource = function () {
-    // body...
+  this.getOneResource = function (id) {
+    return $http.get('/resoures/' + id + '.json');
   }
 }
 

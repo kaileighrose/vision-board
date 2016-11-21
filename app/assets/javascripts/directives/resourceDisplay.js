@@ -13,4 +13,4 @@ function resourceDisplay() {
 
 angular
     .module('app')
-    .directive('resourceDisplay', ResourceDisplay);
+    .directive('resourceDisplay', resourceDisplay);
