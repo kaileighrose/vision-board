@@ -1,4 +1,4 @@
-function ResourceController(ResourceService) {
+function BoardController(BoardService) {
   var ctrl = this;
   ctrl.data = [];
   ctrl.types = ['link', 'idea', 'image link']
@@ -6,4 +6,4 @@ function ResourceController(ResourceService) {
 
 angular
   .module('app')
-  .controller('ResourceController', ResourceController);
+  .controller('BoardController', BoardController);

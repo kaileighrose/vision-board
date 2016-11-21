@@ -16,7 +16,13 @@ angular
                     },
                     'resources@home': {
                       templateUrl: 'resources.html',
-                      controller: 'ResourceController as rs'
+                      controller: 'ResourceController as rs',
+                      children: [
+                        {
+                          name: 'resources.addresource',
+                          templateUrl: 'addresource.html'
+                        }
+                      ]
                     },
                     'user@home': {
                       templateUrl: 'user.html',

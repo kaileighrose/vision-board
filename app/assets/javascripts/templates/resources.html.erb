@@ -1,9 +1,9 @@
 <div id="template" class="container">
   <div ng-controller="ResourceController as rs">
     <h3>All Resources:</h3>
-    <div class="addresource">
-      <button ng-click="rs.showForm()">Add Resource</button>
-      <div ui-view></div>
+    <div class="add">
+      <a ui-sref=".addresource">Add Resource</a>
+      <div ui-view="addresource"></div>
     </div>
     <div ng-repeat="resource in rs.resources">
       <resource-display></resource-display>
