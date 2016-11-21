@@ -3,7 +3,9 @@
     <h3>All Resources:</h3>
     <div class="add">
       <button ng-click="rs.showForm()">Add Resource</button>
-      <div ng-include="'addresource.html'"></div>
+      <div ng-if="">
+        <div ng-include="'addresource.html'"></div>
+      </div>
     </div>
     <div ng-repeat="resource in rs.resources">
       <resource-display></resource-display>

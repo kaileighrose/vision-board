@@ -9,14 +9,14 @@ function BoardController(BoardService) {
     return ctrl.boards;
   }
 
-  ctrl.create = function (resource) {
-    var res = ResourceService.addResource(resource);
-    ctrl.resources.push(res);
-    return ctrl.resources;
+  ctrl.create = function (board) {
+    var res = BoardService.addBoard(board);
+    ctrl.boards.push(res);
+    return ctrl.boards;
   }
 
   ctrl.get = function (id) {
-    return ResourceService.getOneResource(id);
+    return BoardService.getOneBoard(id);
   }
 
   ctrl.load();
