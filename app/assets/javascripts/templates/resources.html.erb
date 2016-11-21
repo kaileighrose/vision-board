@@ -3,7 +3,7 @@
     <h3>All Resources:</h3>
     <div class="add">
       <button ng-click="rs.showForm()">Add Resource</button>
-      <div ng-if="">
+      <div ng-if="rs.form == true">
         <div ng-include="'addresource.html'"></div>
       </div>
     </div>
