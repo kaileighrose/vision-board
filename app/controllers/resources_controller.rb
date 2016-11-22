@@ -6,6 +6,11 @@ class ResourcesController < ApplicationController
     render json: @resource 
   end
 
+  def index
+    @resources = Resource.all.where("user_id = ?", current_user.id)
+    render json: @resources 
+  end
+
   def create
     @resource = Resource.create(resource_params)
     if @note.save
@@ -39,6 +44,6 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resource).permit(:id, :user_id, :boards => [])
+    params.require(:resource).permit(:id, :kind, :item, :name, :user_id, :boards => [])
   end
 end

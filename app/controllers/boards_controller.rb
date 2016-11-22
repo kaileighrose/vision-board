@@ -6,6 +6,11 @@ class BoardsController < ApplicationController
     render json: @board 
   end
 
+  def index
+    @boards = Board.all.where("user_id = ?", current_user.id)
+    render json: @boards 
+  end
+
   def create
     @board = Board.create(board_params)
     if @note.save

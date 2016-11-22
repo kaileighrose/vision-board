@@ -1,8 +1,9 @@
-function ResourceController(ResourceService) {
+function ResourceController(ResourceService, $scope) {
   var ctrl = this;
-  ctrl.types = ['link', 'idea', 'image link'];
+  ctrl.kinds = ['link', 'idea', 'image link'];
   ctrl.form = false;
-  ctrl.search = 'B';
+  ctrl.search = '';
+  ctrl.resources = [];
   //need to add name column to table
 
   ctrl.showForm = function () {
@@ -11,8 +12,11 @@ function ResourceController(ResourceService) {
   }
 
   ctrl.load = function () {
-    ctrl.resources = ResourceService.getResources();
-    return ctrl.resources;
+    var answer = [];
+    resp = ResourceService.getResources();
+    resp.done(function (response) {
+      ctrl.resources = response;
+    });
   }
 
   ctrl.create = function (resource) {

@@ -1,17 +1,18 @@
 function UserService($http) {
-    //remember to add logout
-    var current_user;
+  
+    var current_user = '';
 
     this.checkUser = function () {
-      resp = $http.get('/users.json');
-      console.log(resp.$$state);
-      if (resp.$$state.data == 404 || resp.$$state.data == null) {
-        return 'none';
-      }
-      else {
-        current_user = resp.$$state.data
-        return current_user;
-      }
+      $http({
+        method: 'GET',
+        url: '/users.json'
+      }).then(function successCallback(response) {
+          current_user = response.data;
+          return current_user;
+        }, function errorCallback(response) {
+          console.log('error');
+          return 'none';
+        });
     };
 
     this.SignUp = function (data) {
@@ -20,6 +21,13 @@ function UserService($http) {
 
     this.LogIn = function (data) {
       return $http.post('/sessions', JSON.stringify(data));
+    }
+
+    this.LogOut = function (id) {
+      $http({
+        method: 'DELETE',
+        url: '/sessions' + id
+      });
     }
 }
 

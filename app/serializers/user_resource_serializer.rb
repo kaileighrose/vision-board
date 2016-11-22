@@ -1,3 +1,3 @@
 class UserResourceSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :username, :resource_id
+  attributes :id, :kind, :name, :item, :user_id
 end

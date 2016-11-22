@@ -2,13 +2,14 @@ function logForm() {
   return {
         template: [
             '<div class="userForm">',
-                '<form ng-submit="user.logUser()">',
-                  '<input type="text" placeholder="Username" ng-model="username"></input>',
+                '<form name="form" ng-submit="user.logUser(user)">',
+                  '<input type="text" name="username" required="required" placeholder="Username" ng-model="user.username"></input>',
                   '<br>',
-                  '<input type="text" placeholder="Password" ng-model="password"></input>',
+                  '<input type="text" name="password" required="required" placeholder="Password"  ng-model="user.password"></input>',
                   '<br>',
                   '<button type="submit">Log in</button>',
                 '</form>',
+                '<pre>user = {{user | json}}</pre>',
             '</div>'
         ].join(''),
         controller: function (scope) {

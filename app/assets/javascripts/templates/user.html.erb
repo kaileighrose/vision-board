@@ -1,5 +1,7 @@
 <div class="container">
   <div ng-controller="UserController as user">
+  <p>USER VIEW</p>
     <h4>{{user.current_user.username}}</h4>
+    <a href="#" ng-click="user.signOut()">Log out</a>
   </div>
 </div>

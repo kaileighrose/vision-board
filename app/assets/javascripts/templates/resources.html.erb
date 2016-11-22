@@ -7,12 +7,13 @@
         <div ng-include="'addresource.html'"></div>
       </div>
     </div>
-
+    <br>
     <div class="search">
       <label>Search: </label><input type="text" name="search" ng-model="rs.search">
     </div>
-
+    
     <div ng-repeat="resource in rs.resources | filter: rs.search">
+      <h3>Title: {{resource.name}}</h3><p>{{resource.item}}</p></div>
       <resource-display></resource-display>
     </div>
   </div>

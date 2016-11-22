@@ -1,5 +1,12 @@
 <div class="container">
-    <div ui-vew="user"></div>
+<div ng-controller="UserController as user">
+  <div ng-if="user.current_user == 'none'">
+    <div ui-view="sessions"></div>
+  </div>
+  <div ng-if="user.current_user != 'none'">
+    <div ui-view="user"></div>
     <div ui-view="board"></div>
     <div ui-view="resources"></div>
+  </div>
+  </div>
 </div>

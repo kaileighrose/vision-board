@@ -7,27 +7,38 @@ function UserController(UserService, $scope) {
   //ctrl.user = user.data;
 
   ctrl.logUser = function (user) {
-    ctrl.current_user = UserService.LogIn({username: ctrl.username, password: ctrl.password});
+    resp = UserService.LogIn(user);
+    ctrl.current_user = resp.data;
+    console.log(ctrl.current_user);
+    $scope.apply();
   }
 
   ctrl.signUser = function (user) {
-    console.log(user);
-    ctrl.current_user = UserService.SignUp(user);
+    resp = UserService.SignUp(user);
+    ctrl.current_user = resp.data;
+    $scope.apply();
   }
 
   ctrl.check = function () {
-    ctrl.current_user = UserService.checkUser();
+    console.log(ctrl.current_user);
+    if (ctrl.current_user == 'none') {
+      ctrl.current_user = UserService.checkUser();
+    }
   }
   
   ctrl.showLogForm = function () {
-    console.log('sign in clicked');
     ctrl.form = 'login';
     $scope.apply();
   }
 
   ctrl.showSignForm = function () {
-    console.log('sign up clicked');
     ctrl.form = 'signin';
+    $scope.apply();
+  }
+
+  ctrl.signOut = function () {
+    UserService.LogOut(ctrl.current_user.id);
+    ctrl.current_user = 'none';
     $scope.apply();
   }
 

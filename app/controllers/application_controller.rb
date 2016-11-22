@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    render :'users/_signin' unless current_user
+    return {} unless current_user
   end
 
   def index

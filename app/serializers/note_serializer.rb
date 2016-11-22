@@ -1,4 +1,4 @@
 class NoteSerializer < ActiveModel::Serializer
-  attributes :id, :resource_id, :content
+  attributes :id, :content
   belongs_to :resource, through: ResourceNoteSerializer
 end

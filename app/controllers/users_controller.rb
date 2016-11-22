@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.create(username: params["username"], password: params["password"])
     if @user.save
       current_user = @user
+      session[:user_id] = @user.id
       render json: @user 
     end
   end
