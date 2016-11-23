@@ -1,9 +1,9 @@
 <div class="container">
 <div ng-controller="UserController as user">
-  <div ng-if="user.current_user == 'none'">
+  <div ng-if="user.logged == false">
     <div ui-view="sessions"></div>
   </div>
-  <div ng-if="user.current_user != 'none'">
+  <div ng-if="user.logged == true">
     <div ui-view="user"></div>
     <div ui-view="board"></div>
     <div ui-view="resources"></div>

@@ -1,49 +1,49 @@
 function UserController(UserService, $scope) {
   var ctrl = this;
+  ctrl.logged = false;
   ctrl.current_user = 'none';
   ctrl.form = 'none';
   ctrl.username = '';
   ctrl.password = '';
-  //ctrl.user = user.data;
 
   ctrl.logUser = function (user) {
-    resp = UserService.LogIn(user);
-    ctrl.current_user = resp.data;
-    console.log(ctrl.current_user);
-    $scope.apply();
+    UserService.LogIn(user).then(function (response) {
+      ctrl.current_user = response.data;
+    });
+    ctrl.logged = true;
   }
 
   ctrl.signUser = function (user) {
-    resp = UserService.SignUp(user);
-    ctrl.current_user = resp.data;
-    $scope.apply();
+    resp = UserService.SignUp(user).then(function (response) {
+      ctrl.current_user = response.data;
+    });
+    ctrl.logged = true;
   }
 
   ctrl.check = function () {
-    console.log(ctrl.current_user);
-    if (ctrl.current_user == 'none') {
-      ctrl.current_user = UserService.checkUser();
-    }
+    UserService.checkUser().then(function (response) {
+      if (response.data != null) {
+      ctrl.current_user = response.data;
+      ctrl.logged = true;
+        }
+    });
   }
   
   ctrl.showLogForm = function () {
     ctrl.form = 'login';
-    $scope.apply();
   }
 
   ctrl.showSignForm = function () {
     ctrl.form = 'signin';
-    $scope.apply();
   }
 
   ctrl.signOut = function () {
     UserService.LogOut(ctrl.current_user.id);
     ctrl.current_user = 'none';
-    $scope.apply();
+    ctrl.logged = false;
   }
 
   ctrl.check();
-
 }
 
 angular

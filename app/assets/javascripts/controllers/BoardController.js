@@ -1,25 +1,33 @@
 function BoardController(BoardService) {
   var ctrl = this;
-  ctrl.data = [];
-  ctrl.boards = {};
+  ctrl.boards = [];
+  ctrl.mainboard = [];
+  ctrl.clicked;
   // boardname => [resources]
 
   ctrl.load = function () {
-    ctrl.boards = BoardService.getBoards();
-    return ctrl.boards;
+    resp = BoardService.getBoards();
+    resp.done(function (response) {
+      ctrl.boards = response;
+      console.log(response);
+    });
   }
 
   ctrl.create = function (board) {
-    var res = BoardService.addBoard(board);
-    ctrl.boards.push(res);
-    return ctrl.boards;
+    BoardService.addBoard(board);
+    ctrl.load();
   }
 
-  ctrl.get = function (id) {
-    return BoardService.getOneBoard(id);
+  ctrl.get = function (id = 1) {
+    resp = BoardService.getOneBoard(id);
+    resp.done(function (response) {
+      console.log(response);
+      ctrl.mainboard = response;
+    });
   }
 
   ctrl.load();
+  ctrl.get();
 }
 
 angular

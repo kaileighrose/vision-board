@@ -11,8 +11,11 @@ function ResourceController(ResourceService, $scope) {
     $scope.apply();
   }
 
+  ctrl.checkResource = function (resource) {
+    return resource.kind
+  }
+
   ctrl.load = function () {
-    var answer = [];
     resp = ResourceService.getResources();
     resp.done(function (response) {
       ctrl.resources = response;

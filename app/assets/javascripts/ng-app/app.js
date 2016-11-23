@@ -9,7 +9,10 @@ angular
             .state('home', {
                 url: '/',
                 views: {
-                    '': {templateUrl: 'home.html'},
+                    '': {
+                      templateUrl: 'home.html',
+                      controller:  'UserController as user'
+                    },
                     'board@home': {
                       templateUrl: 'board.html',
                       controller: 'BoardController as board' 
@@ -18,14 +21,8 @@ angular
                       templateUrl: 'resources.html',
                       controller: 'ResourceController as rs'
                     },
-                    'user@home': {
-                      templateUrl: 'user.html',
-                      controller:  'UserController as user'
-                    },
-                    'sessions@home': {
-                      templateUrl: 'sessions.html',
-                      controller:  'UserController as user'
-                    }
+                    'user@home': { templateUrl: 'user.html'},
+                    'sessions@home': {templateUrl: 'sessions.html'}
                 }
             });
     $urlRouterProvider.otherwise('/');
