@@ -1,14 +1,14 @@
 <div id="template" class="container">
-<p>New Resource:</p>
-<form name="form" ng-submit="rs.create(resource)">
-  <select ng-model="resource.kind">
-    <option ng-repeat="kind in rs.kinds" name="resource.kind" ng-value="{{kind}}">{{kind}}</option>
-  </select>
-  <br>
-  <input type="text" name="resource.name" placeholder="name" ng-model="resource.name"></input>
-  <br>
-  <input type="text" placeholder="Item" ng-model="resource.item"></input>
-  <br>
-  <button type="submit">Add Resource</button>
-</form>
+  <p>New Resource:</p>
+  <form name="form" ng-submit="rs.create(resource)">
+    <select ng-model="resource.kind">
+      <option ng-repeat="kind in rs.kinds" name="resource.kind" ng-value="{{kind}}">{{kind}}</option>
+    </select>
+    <br>
+    <input type="text" name="resource.name" placeholder="name" ng-model="resource.name"></input>
+    <br>
+    <input type="text" placeholder="Item" ng-model="resource.item"></input>
+    <br>
+    <button type="submit">Add Resource</button>
+  </form>
 </div>

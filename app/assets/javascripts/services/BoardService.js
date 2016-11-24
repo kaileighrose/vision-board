@@ -1,14 +1,14 @@
 function BoardService($http) {
   this.getBoards = function () {
-    return $.get('/boards');
+    return $http.get('/boards');
   }
 
   this.addBoard = function (data) {
-    return $.post('/boards', data);
+    return $http.post('/boards', data);
   }
 
   this.getOneBoard = function (id) {
-    return $.get('/boards/' + id);
+    return $http.get('/boards/' + id);
   }
 }
 

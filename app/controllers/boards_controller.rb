@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
   before_filter :authorize
+  skip_before_action :verify_authenticity_token
 
   def new
     @board = Board.new
@@ -13,7 +14,8 @@ class BoardsController < ApplicationController
 
   def create
     @board = Board.create(board_params)
-    if @note.save
+    @board.user_id = User.current_user.id
+    if @board.save
       render json: @board 
     end
   end

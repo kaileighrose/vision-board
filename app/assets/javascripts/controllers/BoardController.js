@@ -2,14 +2,18 @@ function BoardController(BoardService) {
   var ctrl = this;
   ctrl.boards = [];
   ctrl.mainboard = [];
-  ctrl.clicked;
+  ctrl.form = false;
   // boardname => [resources]
 
+  ctrl.viewForm = function () {
+    console.log('form function')
+    ctrl.form = true;
+  }
+
   ctrl.load = function () {
-    resp = BoardService.getBoards();
-    resp.done(function (response) {
-      ctrl.boards = response;
-      console.log(response);
+    BoardService.getBoards().then(function (response) {
+      ctrl.boards = response.data;
+      //ctrl.mainboard = ctrl.boards[0];
     });
   }
 
@@ -18,16 +22,14 @@ function BoardController(BoardService) {
     ctrl.load();
   }
 
-  ctrl.get = function (id = 1) {
-    resp = BoardService.getOneBoard(id);
-    resp.done(function (response) {
+  ctrl.get = function (id) {
+    BoardService.getOneBoard(id).then(function (response) {
       console.log(response);
-      ctrl.mainboard = response;
+      ctrl.mainboard = response.data;
     });
   }
 
   ctrl.load();
-  ctrl.get();
 }
 
 angular

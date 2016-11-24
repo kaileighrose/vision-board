@@ -1,11 +1,7 @@
 <div id="template" class="container">
-<form ng-submit="addBoard()">
-  <select ng-repeat="type in board.types">
-    <option>{{type}}</option>
-  </select>
-  <br>
-  <input type="text" placeholder="Item" ng-model="link"></input>
-  <br>
-  <button type="submit">Add Resource</button>
-</form>
+  <p>New Board:</p>
+  <form name="form" ng-submit="bd.create(board)">
+    <input type="text" name="board.board" placeholder="Board Name" ng-model="board.board"></input>
+    <button type="submit">Add Board</button>
+  </form>
 </div>
