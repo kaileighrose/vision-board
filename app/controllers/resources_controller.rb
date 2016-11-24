@@ -1,4 +1,5 @@
 class ResourcesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_filter :authorize
   
 
@@ -9,13 +10,13 @@ class ResourcesController < ApplicationController
 
   def index 
     @resources = Resource.all.where("user_id = ?", User.current_user.id)
-    binding.pry
     render json: @resources 
   end
 
   def create
     @resource = Resource.create(resource_params)
-    if @note.save
+    @resource.user_id = User.current_user.id
+    if @resource.save
       render json: @resource 
     end
   end

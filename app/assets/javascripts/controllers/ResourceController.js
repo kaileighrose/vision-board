@@ -8,7 +8,6 @@ function ResourceController(ResourceService, $scope) {
 
   ctrl.showForm = function () {
     ctrl.form = true;
-    $scope.apply();
   }
 
   ctrl.checkResource = function (resource) {
@@ -17,14 +16,13 @@ function ResourceController(ResourceService, $scope) {
 
   ctrl.load = function () {
     ResourceService.getResources().then(function (response) {
-      ctrl.resources = response;
+      ctrl.resources = response.data;
     });
   }
 
   ctrl.create = function (resource) {
-    var res = ResourceService.addResource(resource);
-    ctrl.resources.push(res);
-    return ctrl.resources;
+    ResourceService.addResource(resource)
+    ctrl.load();
   }
 
   ctrl.get = function (id) {
