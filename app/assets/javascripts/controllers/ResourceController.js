@@ -16,8 +16,7 @@ function ResourceController(ResourceService, $scope) {
   }
 
   ctrl.load = function () {
-    resp = ResourceService.getResources();
-    resp.done(function (response) {
+    ResourceService.getResources().then(function (response) {
       ctrl.resources = response;
     });
   }

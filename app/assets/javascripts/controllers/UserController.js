@@ -15,9 +15,8 @@ function UserController(UserService, $scope) {
 
   ctrl.signUser = function (user) {
     resp = UserService.SignUp(user).then(function (response) {
-      ctrl.current_user = response.data;
+      ctrl.logUser(response.data);
     });
-    ctrl.logged = true;
   }
 
   ctrl.check = function () {

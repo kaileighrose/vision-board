@@ -1,13 +1,15 @@
 class ResourcesController < ApplicationController
   before_filter :authorize
+  
 
   def new
     @resource = Resource.new
     render json: @resource 
   end
 
-  def index
-    @resources = Resource.all.where("user_id = ?", current_user.id)
+  def index 
+    @resources = Resource.all.where("user_id = ?", User.current_user.id)
+    binding.pry
     render json: @resources 
   end
 

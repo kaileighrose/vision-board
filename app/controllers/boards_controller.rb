@@ -7,7 +7,7 @@ class BoardsController < ApplicationController
   end
 
   def index
-    @boards = Board.all.where("user_id = ?", current_user.id)
+    @boards = Board.all.where("user_id = ?", User.current_user.id)
     render json: @boards 
   end
 

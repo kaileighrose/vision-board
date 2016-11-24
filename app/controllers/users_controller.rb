@@ -8,19 +8,20 @@ class UsersController < ApplicationController
   def create
     @user = User.create(username: params["username"], password: params["password"])
     if @user.save
-      current_user = @user
+      User.current_user = @user
+      User.save
       session[:user_id] = @user.id
       render json: @user 
     end
   end
 
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find(User.current_user.id)
     render json: @user 
   end
 
   def update
-    @user = User.find(current_user.id)
+    @user = User.find(session[:user_id])
     @user.update(user_params)
     if @user.save
       render json: @user 
@@ -28,17 +29,17 @@ class UsersController < ApplicationController
   end
 
   def index
-    @user = User.find(current_user.id) if current_user != nil
+    @user = User.find(session[:user_id]) if User.current_user != nil
     render json: @user 
   end
 
   def show
-    @user = User.find(current_user.id) if current_user != nil
+    @user = User.find(session[:user_id]) if User.current_user != nil
     render json: @user 
   end
 
   def destroy
-    @user = User.find(current_user.id)
+    @user = User.find(User.current_user.id)
     @user.destroy
   end
 

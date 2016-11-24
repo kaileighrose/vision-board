@@ -1,7 +1,7 @@
 function ResourceService($http) {
 
   this.getResources = function () {
-    return $.get('/resources');
+    return $http.get('/resources');
   }
 
   this.addResource = function (data) {
