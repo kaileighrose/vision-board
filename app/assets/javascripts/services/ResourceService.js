@@ -9,7 +9,11 @@ function ResourceService($http) {
   }
 
   this.getOneResource = function (id) {
-    return $http.get('/resoures/' + id);
+    return $http.get('/resources/' + id);
+  }
+
+  this.deleteResource = function (id) {
+    return $http.delete('/resources/' + id);
   }
 }
 

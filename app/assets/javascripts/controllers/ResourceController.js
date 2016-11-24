@@ -29,6 +29,11 @@ function ResourceController(ResourceService, $scope) {
     return ResourceService.getOneResource(id);
   }
 
+  ctrl.delete = function (id) {
+    ResourceService.deleteResource(id);
+    ctrl.load();
+  }
+
   ctrl.load();
   
 }
