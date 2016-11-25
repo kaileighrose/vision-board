@@ -45,6 +45,6 @@ class BoardsController < ApplicationController
 
 private
   def board_params
-    params.require(:board).permit(:id, :board, :user_id, :resources => [])
+    params.require(:board).permit(:id, :name, :user_id, :resources => [])
   end
 end
