@@ -12,6 +12,8 @@ li {
 .slot {
   background-color: #6de0e0;
   width: 25%;
+  height: 200px;
+  overflow: auto;
   float: left;
   text-align: center;
   display: inline-block;
