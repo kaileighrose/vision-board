@@ -43,6 +43,14 @@ class BoardsController < ApplicationController
     @board.destroy
   end
 
+  def remove
+    @board = Board.find(params[:id])
+    @board.resources.delete(Resource.find(params[:resource_id]))
+    if @board.save
+      render json: @board 
+    end
+  end
+
 private
   def board_params
     params.require(:board).permit(:id, :name, :user_id, :resource_id, :resources => [])

@@ -15,6 +15,11 @@ function BoardService($http) {
     var data = {resource_id: resource}
     return $http.patch('/boards/' + board, data);
   }
+
+  this.removeResource = function (resource, board) {
+    var data = {resource_id: resource}
+    return $http.post('/boards/' + board + '/remove', data)
+  }
 }
 
 angular

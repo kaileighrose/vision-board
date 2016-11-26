@@ -5,6 +5,7 @@
     <div ng-repeat="resource in bd.mainboard.resources">
       <div class="slot">
         <resource-display></resource-display>
+        <a href="#" ng-click="bd.remove(resource.id)">remove</a>
       </div>
     </div>
     </div>

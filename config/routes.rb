@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :boards
   resources :resources
   resources :sessions
+  post '/boards/:id/remove' => 'boards#remove'
 
   root 'application#index'
   get '*path' => 'application#index'

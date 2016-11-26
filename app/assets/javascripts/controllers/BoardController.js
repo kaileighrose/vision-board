@@ -29,6 +29,11 @@ function BoardController(BoardService) {
     });
   }
 
+  ctrl.remove = function (resource_id) {
+    BoardService.removeResource(resource_id, ctrl.mainboard.id);
+    ctrl.get(ctrl.mainboard.id);
+  }
+
   ctrl.load();
 }
 
