@@ -1,7 +1,11 @@
 <div id="template" class="container">
   <p>New Board:</p>
   <form name="form" ng-submit="bd.create(board)">
-    <input type="text" name="board.name" placeholder="Board Name" ng-model="board.name"></input>
+    <input type="text" required="required" name="board.name" placeholder="Board Name" ng-model="board.name"></input>
     <button type="submit">Add Board</button>
+
+    <div ng-if="form.board.name.$touched && form.board.name.$error.required">
+        Name of board is required!
+    </div>
   </form>
 </div>
