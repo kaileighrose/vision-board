@@ -11,6 +11,17 @@ li {
 .slot {
   background-color: #6de0e0;
   width: 25%;
+  float: left;
+  display: inline-block;
+}
+
+.clearfix:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
 }
 
 h3, p {
@@ -25,4 +36,9 @@ h1 {
 h2 {
   font-family: 'Roboto', sans-serif;
   color: #90aaaf;
+}
+
+img {
+  width: 75%;
+  height: auto;
 }

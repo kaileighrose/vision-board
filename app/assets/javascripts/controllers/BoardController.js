@@ -13,7 +13,7 @@ function BoardController(BoardService) {
   ctrl.load = function () {
     BoardService.getBoards().then(function (response) {
       ctrl.boards = response.data;
-      //ctrl.mainboard = ctrl.boards[0];
+      ctrl.mainboard = ctrl.boards[0];
     });
   }
 

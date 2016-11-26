@@ -1,10 +1,12 @@
 <div id="template" class="container">
   <div ng-controller="BoardController as bd"> 
    <div ng-if="bd.mainboard.name"> <h3>Current Board: {{bd.mainboard.name}}</h3></div>
+   <div class="clearfix">
     <div ng-repeat="resource in bd.mainboard.resources">
       <div class="slot">
         <resource-display></resource-display>
       </div>
+    </div>
     </div>
     <div class="add">
         <button ng-click="bd.viewForm()">Create Board</button>

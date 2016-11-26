@@ -2,7 +2,7 @@ function ResourceController(ResourceService, BoardService, $scope) {
   var ctrl = this;
   ctrl.kinds = ['link', 'idea', 'image link'];
   ctrl.form = false;
-  ctrl.boardForm = true;
+  ctrl.boardForm = false;
   ctrl.search = '';
   ctrl.resources = [];
   //need to add name column to table
