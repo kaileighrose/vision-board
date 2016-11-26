@@ -1,6 +1,7 @@
 function ResourceController(ResourceService, BoardService, $scope, $rootScope) {
   var ctrl = this;
   ctrl.kinds = ['link', 'idea', 'image link'];
+  ctrl.sortType = 'name';
   ctrl.form = false;
   ctrl.boardForm = false;
   ctrl.search = '';
