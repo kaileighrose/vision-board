@@ -9,7 +9,6 @@ function logForm() {
                   '<br>',
                   '<button type="submit">Log in</button>',
                 '</form>',
-                '<pre>user = {{user | json}}</pre>',
             '</div>'
         ].join(''),
         controller: function (scope) {

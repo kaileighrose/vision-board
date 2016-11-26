@@ -1,5 +1,5 @@
 function BoardService($http) {
-  this.getBoards = function () {
+  this.getBoards = functrion () {
     return $http.get('/boards');
   }
 

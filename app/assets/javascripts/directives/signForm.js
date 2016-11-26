@@ -9,7 +9,6 @@ function signForm() {
                   '<br>',
                   '<button type="submit">Sign up</button>',
                 '</form>',
-                '<pre>user = {{user | json}}</pre>',
             '</div>'
         ].join(''),
         controller: function (scope) {
