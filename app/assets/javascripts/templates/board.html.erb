@@ -1,7 +1,7 @@
 <div id="template" class="container">
   <div ng-controller="BoardController as bd"> 
    <div ng-if="bd.mainboard.name"> <h3>Current Board: {{bd.mainboard.name}}</h3></div>
-   <div class="clearfix">
+   <div class="board clearfix">
     <div ng-repeat="resource in bd.mainboard.resources">
       <div class="slot">
         <resource-display></resource-display>
@@ -14,10 +14,10 @@
           <div ng-include="'addboard.html'"></div>
         </div>  
     </div>
-    <div ng-repeat="board in bd.boards">
       <ul>
-        <li><a href="#" ng.click="bd.get(board.id)">{{board.name}}</a></li>
+        <li ng-repeat="board in bd.boards">
+        <a href="#" ng.click="bd.get(board.id)">{{board.name}}</a>
+        </li>
       </ul>
-    </div>
   </div>
 </div>

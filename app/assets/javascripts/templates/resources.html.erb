@@ -11,7 +11,7 @@
     <div class="search">
       <label>Search: </label><input type="text" name="search" ng-model="rs.search">
     </div>
-    <div ng-repeat="resource in rs.resources | filter: rs.search">
+    <div class="resources" ng-repeat="resource in rs.resources | filter: rs.search">
       <resource-display></resource-display><p><a href="#" ng-click="rs.delete(resource.id)">Delete</a> <a href="#" ng-click="rs.showBoardForm()">Add to Board</a><span ng-if="rs.boardForm == true"><form name="form" ng-submit="rs.addToBoard(resource.id, board)">
      <select ng-model="board">
        <option ng-repeat="board in user.current_user.boards" name="board" ng-value="{{board.id}}">{{board.name}}</option>
