@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20161125173048) do
 
-  create_table "board_resources_tables", force: :cascade do |t|
+  create_table "board_resources", force: :cascade do |t|
     t.integer "board_id"
     t.integer "resource_id"
   end
