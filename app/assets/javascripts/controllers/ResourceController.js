@@ -1,7 +1,8 @@
-function ResourceController(ResourceService, $scope) {
+function ResourceController(ResourceService, BoardService, $scope) {
   var ctrl = this;
   ctrl.kinds = ['link', 'idea', 'image link'];
   ctrl.form = false;
+  ctrl.boardForm = true;
   ctrl.search = '';
   ctrl.resources = [];
   //need to add name column to table
@@ -32,6 +33,15 @@ function ResourceController(ResourceService, $scope) {
   ctrl.delete = function (id) {
     ResourceService.deleteResource(id);
     ctrl.load();
+  }
+
+  ctrl.addToBoard = function (resource, board) {
+    BoardService.addToBoard(board, resource);
+  }
+
+  ctrl.showBoardForm = function () {
+    console.log('show board clicked');
+    ctrl.boardForm = true;
   }
 
   ctrl.load();

@@ -27,7 +27,7 @@ class BoardsController < ApplicationController
 
   def update
     @board = Board.find(params[:id])
-    @board.update(board_params)
+    @board.resources << Resource.find(params[:resource_id])
     if @board.save
       render json: @board 
     end
@@ -45,6 +45,6 @@ class BoardsController < ApplicationController
 
 private
   def board_params
-    params.require(:board).permit(:id, :name, :user_id, :resources => [])
+    params.require(:board).permit(:id, :name, :user_id, :resource_id, :resources => [])
   end
 end

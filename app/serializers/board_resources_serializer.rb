@@ -1,3 +1,3 @@
 class BoardResourcesSerializer < ActiveModel::Serializer
-  attributes :id, :board_id, :resource_id
+  attributes :id, :kind, :name, :item
 end
