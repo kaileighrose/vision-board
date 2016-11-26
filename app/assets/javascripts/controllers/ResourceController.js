@@ -1,4 +1,4 @@
-function ResourceController(ResourceService, BoardService, $scope) {
+function ResourceController(ResourceService, BoardService, $scope, $rootScope) {
   var ctrl = this;
   ctrl.kinds = ['link', 'idea', 'image link'];
   ctrl.form = false;
@@ -37,6 +37,7 @@ function ResourceController(ResourceService, BoardService, $scope) {
 
   ctrl.addToBoard = function (resource, board) {
     BoardService.addToBoard(board, resource);
+    $rootScope.$broadcast('reloadBoard', board);
   }
 
   ctrl.showBoardForm = function () {

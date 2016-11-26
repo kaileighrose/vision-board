@@ -9,6 +9,7 @@
       </div>
     </div>
     </div>
+    <br>
     <div class="add">
         <button ng-click="bd.viewForm()">Create Board</button>
         <div ng-if="bd.form == true">
@@ -17,7 +18,7 @@
     </div>
       <ul>
         <li ng-repeat="board in bd.boards">
-        <a href="#" ng.click="bd.get(board.id)">{{board.name}}</a>
+          <a href="#" ng-click="bd.get(board.id)">{{board.name}}</a>
         </li>
       </ul>
   </div>

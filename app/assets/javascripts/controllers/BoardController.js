@@ -1,9 +1,10 @@
-function BoardController(BoardService) {
+function BoardController(BoardService, $scope) {
   var ctrl = this;
   ctrl.boards = [];
   ctrl.mainboard = [];
   ctrl.form = false;
-  // boardname => [resources]
+
+  $scope.$on('reloadBoard', function(event, data) {ctrl.get(data)});
 
   ctrl.viewForm = function () {
     console.log('form function')
@@ -24,7 +25,6 @@ function BoardController(BoardService) {
 
   ctrl.get = function (id) {
     BoardService.getOneBoard(id).then(function (response) {
-      console.log(response);
       ctrl.mainboard = response.data;
     });
   }
