@@ -5,6 +5,7 @@ function UserController(UserService, $scope) {
   ctrl.form = 'none';
   ctrl.username = '';
   ctrl.password = '';
+  $scope.$on('reloadResourceBoards', function(event, data) {ctrl.reLoad()});
 
   ctrl.logUser = function (user) {
     UserService.LogIn(user).then(function (response) {
@@ -20,12 +21,15 @@ function UserController(UserService, $scope) {
   }
 
   ctrl.check = function () {
+    if (ctrl.current_user == 'none') {
     UserService.checkUser().then(function (response) {
       if (response.data != null) {
-      ctrl.current_user = response.data;
-      ctrl.logged = true;
+        ctrl.current_user = response.data;
+        ctrl.logged = true;
         }
-    });
+    }) } else {
+      ctrl.reLoad();
+    }
   }
   
   ctrl.showLogForm = function () {
@@ -40,6 +44,14 @@ function UserController(UserService, $scope) {
     UserService.LogOut(ctrl.current_user.id);
     ctrl.current_user = 'none';
     ctrl.logged = false;
+  }
+
+  ctrl.reLoad = function () {
+    UserService.getUser(ctrl.current_user.id).then(function (response) {
+      if (response.data != null) {
+        ctrl.current_user = response.data;
+        }
+    });
   }
 
   ctrl.check();

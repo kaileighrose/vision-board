@@ -6,7 +6,6 @@ function ResourceController(ResourceService, BoardService, $scope, $rootScope) {
   ctrl.boardForm = false;
   ctrl.search = '';
   ctrl.resources = [];
-  //need to add name column to table
 
   ctrl.showForm = function () {
     ctrl.form = true;

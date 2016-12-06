@@ -15,6 +15,10 @@ function UserService($http) {
     this.LogOut = function (id) {
       return $http.delete('/sessions/' + id);
     }
+
+    this.getUser = function (id) {
+      return $http.get('/users/' + id);
+    }
 }
 
 angular

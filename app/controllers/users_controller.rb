@@ -34,8 +34,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id]) if User.current_user != nil
-    render json: @user 
+    if params[:id]
+      @user = User.find(params[:id])
+      render json: @user 
+    else
+      @user = User.find(session[:user_id]) if User.current_user != nil
+      render json: @user 
+    end
   end
 
   def destroy

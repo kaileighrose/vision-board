@@ -1,4 +1,4 @@
-function BoardController(BoardService, $scope) {
+function BoardController(BoardService, $scope, $rootScope) {
   var ctrl = this;
   ctrl.boards = [];
   ctrl.mainboard = [];
@@ -21,6 +21,7 @@ function BoardController(BoardService, $scope) {
   ctrl.create = function (board) {
     BoardService.addBoard(board);
     ctrl.load();
+    $rootScope.$broadcast('reloadResourceBoards', board);
   }
 
   ctrl.get = function (id) {
