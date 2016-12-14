@@ -5,7 +5,7 @@ function logForm() {
                 '<form name="form" ng-submit="user.logUser(user)">',
                   '<input type="text" name="username" required="required" placeholder="Username" ng-model="user.username"></input>',
                   '<br>',
-                  '<input type="text" name="password" required="required" placeholder="Password"  ng-model="user.password"></input>',
+                  '<input type="password" name="password" required="required" placeholder="Password"  ng-model="user.password"></input>',
                   '<br>',
                   '<button type="submit">Log in</button>',
                 '</form>',

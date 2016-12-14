@@ -11,6 +11,13 @@ function ResourceController(ResourceService, BoardService, $scope, $rootScope) {
     ctrl.form = true;
   }
 
+  ctrl.favorite = function (resource) {
+    console.log('favorite clicked');
+    resource.favorites++;
+    ResourceService.addFavorite(resource);
+    ctrl.load();
+  }
+
   ctrl.checkResource = function (resource) {
     return resource.kind
   }

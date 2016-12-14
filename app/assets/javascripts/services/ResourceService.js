@@ -8,6 +8,10 @@ function ResourceService($http) {
     return $http.post('/resources', data);
   }
 
+  this.addFavorite = function (resource) {
+    return $http.patch('/resources/' + resource.id, resource);
+  }
+
   this.getOneResource = function (id) {
     return $http.get('/resources/' + id);
   }

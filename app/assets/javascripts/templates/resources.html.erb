@@ -15,7 +15,10 @@
       <a href="#" ng-click="rs.sortType = 'created_at'">Sort By Date</a>
     </div>
     <div class="resources" ng-repeat="resource in rs.resources | orderBy : rs.sortType | filter: rs.search">
-      <resource-display></resource-display><p><a href="#" ng-click="rs.delete(resource.id)">Delete</a><form name="form" ng-submit="rs.addToBoard(resource.id, board)">
+      <resource-display></resource-display><p><a href="#" ng-click="rs.delete(resource.id)">Delete</a>
+      <p>Favorites: {{resource.favoriteCount}}</p>
+      <button ng-click="rs.favorite(resource)">Favorite</button>
+      <form name="form" ng-submit="rs.addToBoard(resource.id, board)">
      <select ng-model="board">
        <option ng-repeat="board in user.current_user.boards" name="board" ng-value="{{board.id}}">{{board.name}}</option>
      </select>  
