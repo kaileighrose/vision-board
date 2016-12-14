@@ -3,11 +3,11 @@
   <form name="form" ng-submit="rs.create(resource)">
     <select ng-model="resource.kind">
       <option ng-repeat="kind in rs.kinds" name="resource.kind" ng-value="{{kind}}">{{kind}}</option>
-    </select>
+    </select><br>
     <br>
-    <input type="text" name="resource.name" placeholder="name" ng-model="resource.name"></input>
+    <input type="text" name="resource.name" placeholder="name" ng-model="resource.name"></input><br>
     <br>
-    <textarea name="item" placeholder="Item" ng-model="resource.item"></textarea>
+    <textarea name="item" placeholder="item" ng-model="resource.item"></textarea>
     <br>
     <button type="submit">Add Resource</button>
   </form>
